@@ -1,0 +1,15 @@
+.modal {
+	position: fixed;
+	inset: 1rem;
+	background-color: violet;
+	display: flex;
+	flex-direction: column;
+	&__header {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+	&__btn {
+		background-color: red;
+	}
+}
