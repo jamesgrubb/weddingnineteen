@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './styles.module.scss';
 import { FiX } from 'react-icons/fi';
-export default function Modal(props) {
+
+const Modal = (props) => {
 	const [isBrowser, setIsBrowser] = useState(false);
 	useEffect(() => {
 		setIsBrowser(true);
@@ -34,4 +35,6 @@ export default function Modal(props) {
 	} else {
 		return null;
 	}
-}
+};
+
+export default Modal;
