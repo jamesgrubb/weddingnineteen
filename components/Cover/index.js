@@ -3,15 +3,17 @@ const Cover = () => {
 		<div className='cover'>
 			<div className='cover__content'>
 				<header className='cover__header'>
-					<h2 class='cover__subtitle title'>
-						celeb<div class='cover__brr'>r</div>
-						<div class='cover__brr'>r</div>
-						<div class='cover__brr'>r</div>
-						<div class='cover__brr'>r</div>
-						<div class='cover__brr'>r</div>
-						<div class='cover__brr'>r</div>
-						<div class='cover__brr'>r</div>
-						<div class='cover__brr'>r</div>ate
+					<h2 className='cover__subtitle title'>
+						celeb<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>
 					</h2>
 					<figure className='cover__figure'>
 						<svg
@@ -66,7 +68,7 @@ const Cover = () => {
 							</g>
 						</svg>
 					</figure>
-					<h1 class='cover__title title'>
+					<h1 className='cover__title title'>
 						tina and {"jame's"} wedding
 					</h1>
 				</header>
