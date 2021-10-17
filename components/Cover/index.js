@@ -67,7 +67,7 @@ const Cover = () => {
 						</svg>
 					</figure>
 					<h1 class='cover__title title'>
-						tina and jame{"'"}s wedding
+						tina and {"jame's"} wedding
 					</h1>
 				</header>
 			</div>

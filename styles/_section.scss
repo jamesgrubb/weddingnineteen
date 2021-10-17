@@ -4,10 +4,14 @@
 	--align: center;
 	--align-even: center;
 	--align-odd: center;
-	@include break-at(60ch) {
-		--width-content: 75%;
+	--size-title: var(--text-md);
+	@include break-at(65ch) {
+		--size-title: var(--text-xl);
+	}
+	@include break-at(90ch) {
 		--align-even: flex-start;
 		--align-odd: flex-end;
+		--width-content: 75%;
 	}
 	display: flex;
 	flex-direction: column;
@@ -40,7 +44,7 @@
 		// margin: 0 auto;
 	}
 	&__title {
-		font-size: var(--text-xl);
+		font-size: var(--size-title);
 		text-transform: uppercase;
 		letter-spacing: 0.3rem;
 	}
