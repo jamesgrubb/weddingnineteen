@@ -40,9 +40,7 @@ export default function Home() {
 							<nav className={styles.header__nav}>
 								<ul className={styles.header__navItems}>
 									<li className='header__nav-item'>
-										<Link href='/covid'>
-											<a>Covid</a>
-										</Link>
+										<Link href='/covid'>Covid</Link>
 									</li>
 								</ul>
 							</nav>
