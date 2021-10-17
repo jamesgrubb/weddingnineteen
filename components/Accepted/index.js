@@ -20,16 +20,16 @@ const Accepted = () => {
 				</div>
 			</div>
 			<form
-				autocomplete='on'
+				autoComplete='on'
 				onSubmit={handleFormSubmit}
 				className={styles.content__form}>
 				<div className={styles.content__formItems}>
 					<div className={styles.content__formItem}>
-						<label className={styles.label} for='name'>
+						<label className={styles.label} htmlFor='name'>
 							Name
 						</label>
 						<input
-							autocomplete='given-name'
+							autoComplete='given-name'
 							required
 							className={styles.input}
 							type='text'
@@ -38,15 +38,13 @@ const Accepted = () => {
 						/>
 					</div>
 					<div className={styles.content__formItem}>
-						<label className={styles.label} for='surname'>
+						<label className={styles.label} htmlFor='surname'>
 							Surname
 						</label>
 						<input
 							className={styles.input}
 							required
-							aria-required
-							autocomplete='family-name'
-							aria-required
+							autoComplete='family-name'
 							type='text'
 							name='surname'
 							id='surname'
