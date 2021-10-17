@@ -15,7 +15,7 @@ const Cover = () => {
 					</h2>
 					<figure className='cover__figure'>
 						<svg
-							class=' cover__image'
+							className=' cover__image'
 							width='100%'
 							height='100%'
 							viewBox='0 0 253 535'
@@ -46,7 +46,7 @@ const Cover = () => {
 									x2='252.549'
 									y2='529.668'
 									stroke='#706F6F'
-									stroke-width='9.03627'
+									strokeWidth='9.03627'
 								/>
 								<path
 									id='Tent Chimney'
