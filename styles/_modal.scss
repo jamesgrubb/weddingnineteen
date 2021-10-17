@@ -2,15 +2,19 @@
 	position: fixed;
 	z-index: 1000;
 	inset: 1rem;
-	background-color: violet;
+	background-color: var(--color-brand-light);
 	display: flex;
 	flex-direction: column;
 	&__header {
+		position: absolute;
+		z-index: 1;
 		width: 100%;
 		display: flex;
 		justify-content: flex-end;
 	}
 	&__btn {
-		background-color: red;
+		background-color: transparent;
+		appearance: none;
+		border: none;
 	}
 }
