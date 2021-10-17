@@ -1,17 +1,41 @@
+@import 'mixins';
 @import 'theme';
+@import 'typography';
+@import 'modal';
+@import 'container';
+@import 'section';
 
 html {
-	@each $key, $color in $colors {
-		--color-#{$key}: $color;
+	@each $key, $size in $sizes {
+		--text-#{$key}: #{$size}rem;
 	}
+	@each $key, $gap in $gaps {
+		--gap-#{$key}: #{$gap}rem;
+	}
+	@each $key, $color in $colors {
+		--color-#{$key}: #{$color};
+	}
+	@media (min-width: 60ch) {
+		@each $key, $size in $sizes {
+			--text-#{$key}: #{$size * 1.8}rem;
+		}
+		@each $key, $gap in $gaps {
+			--gap-#{$key}: #{$gap * 1.8}rem;
+		}
+	}
+}
+h1,
+h2 {
+	margin: 0;
+	padding: 0;
 }
 
 html,
 body {
+	font-family: 'Poppins', sans-serif;
+	height: 100%;
 	padding: 0;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {

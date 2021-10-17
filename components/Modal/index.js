@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import styles from './styles.module.scss';
 import { FiX } from 'react-icons/fi';
-
+import { colorGreen } from '/styles/colors.module.scss';
 const Modal = (props) => {
 	const [isBrowser, setIsBrowser] = useState(false);
 	useEffect(() => {
@@ -15,12 +14,18 @@ const Modal = (props) => {
 	};
 
 	const modalContent = props.show ? (
-		<div className={styles.modal}>
-			<header className={styles.modal__header}>
+		<div className='modal'>
+			<header className='modal__header'>
 				<button
-					className={styles.modal__btn}
+					style={{
+						fontSize: '3rem',
+						margin: 0,
+						padding: '1rem',
+						lineHeight: 1,
+					}}
+					className='modal__btn'
 					onClick={handleCloseClick}>
-					<FiX color='green' />
+					<FiX color={colorGreen} />
 				</button>
 			</header>
 			{props.children}

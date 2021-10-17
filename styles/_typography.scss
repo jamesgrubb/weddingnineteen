@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'Hatton';
+	src: url('/fonts/pphatton-ultralight-webfont.woff2') format('woff2'),
+		url('/fonts/pphatton-ultralight-webfont.woff') format('woff');
+	font-weight: light;
+}
+
+@font-face {
+	font-family: 'Hatton';
+	src: url('/fonts/pphatton-bold-webfont.woff2') format('woff2'),
+		url('/fonts/pphatton-bold-webfont.woff') format('woff');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Hatton';
+	src: url('/fonts/pphatton-medium-webfont.woff2') format('woff2'),
+		url('/fonts/pphatton-medium-webfont.woff') format('woff');
+	font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Hatton', serif;
+	margin: 0;
+	padding: 0;
+	color: var(--color-white);
+}
+
+p {
+	margin: 0;
+}
+.sans {
+	font-family: 'Poppins', sans-serif;
+}
+
+$sizes: (
+	xs: 0.4,
+	sm: 0.6,
+	md: 1,
+	lg: 1.8,
+	xl: 2.4,
+);

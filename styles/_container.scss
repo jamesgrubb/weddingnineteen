@@ -1,0 +1,33 @@
+.container {
+	--content-width: 90ch;
+	--width: 100%;
+	@media (min-width: 50ch) {
+		--content-width: 70ch;
+		--width: 70%;
+	}
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	background-color: var(--color-dark);
+	&:nth-child(even) {
+		justify-content: flex-start;
+		background-color: var(--color-brand, color(green));
+		& {
+			align-items: flex-end;
+		}
+	}
+	&__content {
+		display: flex;
+		width: var(--content-width);
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		background-color: #fff;
+	}
+	&__title {
+		width: var(--width);
+		font-size: var(--text-lg, 5rem);
+		background-color: red;
+	}
+}

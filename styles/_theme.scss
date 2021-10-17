@@ -1,4 +1,5 @@
-$color-brand: #8ad6c8 !default;
+@import './colors.module';
+$color-brand: $green !default;
 $color-gray-dark: #706f6f !default;
 $color-gray-light: #dadada !default;
 $color-primary: #2f80ed !default;
@@ -21,4 +22,12 @@ $colors: (
 
 @function color($key) {
 	@return map-get($colors, $key);
-} ;
+}
+
+$gaps: (
+	xs: 0.4,
+	s: 0.6,
+	md: 1,
+	lg: 1.8,
+	xl: 2.6,
+);
