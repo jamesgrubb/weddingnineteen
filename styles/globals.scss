@@ -4,6 +4,7 @@
 @import 'modal';
 @import 'container';
 @import 'section';
+@import 'cover';
 
 html {
 	@each $key, $size in $sizes {
@@ -32,6 +33,7 @@ h2 {
 
 html,
 body {
+	color: var(--color-light, #fff);
 	font-family: 'Poppins', sans-serif;
 	height: 100%;
 	padding: 0;

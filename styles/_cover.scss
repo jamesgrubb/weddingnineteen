@@ -1,0 +1,32 @@
+.cover {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-direction: var(--direction, column);
+	min-height: var(--min-height, 70vh);
+	position: relative;
+	background-color: var(--color-brand);
+	// height: 70vh;
+	background-color: var(--color-brand-dark);
+	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	&__subtitle,
+	&__title {
+		color: red;
+		display: inline-flex;
+	}
+	&__figure {
+		margin: 0;
+		padding: 0;
+	}
+	&__image {
+		max-width: 100%;
+		width: 40%;
+		height: auto;
+	}
+}
