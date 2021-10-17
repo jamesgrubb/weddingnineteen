@@ -9,6 +9,9 @@
 		.section__item .section__content {
 			align-items: flex-end;
 		}
+		.section__item {
+			background-color: var(--brand);
+		}
 	}
 	&__item {
 		display: flex;
