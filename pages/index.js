@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.scss';
 import Accepted from '../components/Accepted';
 import Section from '../components/Section';
 import Cover from '../components/Cover';
+import RSVP from '../components/RSVP';
 export default function Home() {
 	const [showModal, setShowModal] = useState(false);
 	const [accept, setAccept] = useState(null);
@@ -24,11 +25,10 @@ export default function Home() {
 		<>
 			<main className='wrapper'>
 				<Cover />
-				<Section>
-					<section className={styles.section}></section>
-					<button onClick={handleAccept}>Accept</button>
-					<button onClick={handleDecline}>Decline</button>
-				</Section>
+				<RSVP
+					handleAccept={handleAccept}
+					handleDecline={handleDecline}
+				/>
 				<Section
 					headerBackground='yellow'
 					bodyBackground='blue'

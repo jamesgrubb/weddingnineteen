@@ -13,7 +13,7 @@ const Cover = () => {
 						<div className='cover__brr'>r</div>
 						<div className='cover__brr'>r</div>
 						<div className='cover__brr'>r</div>
-						<div className='cover__brr'>r</div>
+						<div className='cover__brr'>r</div>ate
 					</h2>
 					<figure className='cover__figure'>
 						<svg
