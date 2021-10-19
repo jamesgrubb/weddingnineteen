@@ -22,6 +22,7 @@ const Modal = (props) => {
 						margin: 0,
 						padding: '1rem',
 						lineHeight: 1,
+						cursor: pointer,
 					}}
 					className='modal__btn'
 					onClick={handleCloseClick}>
