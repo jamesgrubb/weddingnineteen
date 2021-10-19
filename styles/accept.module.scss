@@ -145,6 +145,7 @@
 	font-weight: bold;
 	color: var(--color-white);
 	background-color: var(--color-primary);
+	cursor: pointer;
 	&:hover {
 		background: var(--color-hover);
 	}
@@ -152,6 +153,7 @@
 		outline: 2px solid var(--color-focus);
 	}
 	&--primary {
+		cursor: pointer;
 		background-color: transparent;
 		border: 2px solid var(--color-primary);
 		color: var(--color-primary);
