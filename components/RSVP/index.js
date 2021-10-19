@@ -43,10 +43,18 @@ function Rsvp(props) {
 						either way, please let us know
 					</h2>
 					<div className='rsvp__buttons'>
-						<button className='btn' onClick={props.handleAccept}>
+						<button
+							type='submit'
+							style={{ cursor: 'pointer' }}
+							className='btn'
+							onClick={props.handleAccept}>
 							Accept
 						</button>
-						<button className='btn' onClick={props.handleDecline}>
+						<button
+							type='submit'
+							style={{ cursor: 'pointer' }}
+							className='btn'
+							onClick={props.handleDecline}>
 							Decline
 						</button>
 					</div>
