@@ -23,6 +23,7 @@ input[type='text'] {
 	text-transform: uppercase;
 	font-family: var(--sans);
 	font-weight: bold;
+	cursor: pointer;
 	color: var(--color-white);
 	background-color: var(--color-primary);
 	&:hover {
