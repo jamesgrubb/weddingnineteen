@@ -44,14 +44,12 @@ function Rsvp(props) {
 					</h2>
 					<div className='rsvp__buttons'>
 						<button
-							type='submit'
 							style={{ cursor: 'pointer' }}
 							className='btn'
 							onClick={props.handleAccept}>
 							Accept
 						</button>
 						<button
-							type='submit'
 							style={{ cursor: 'pointer' }}
 							className='btn'
 							onClick={props.handleDecline}>

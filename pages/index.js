@@ -11,11 +11,15 @@ export default function Home() {
 	const [showModal, setShowModal] = useState(false);
 	const [accept, setAccept] = useState(null);
 	const handleAccept = (e) => {
+		console.log('Handle accept', e);
+		e.preventDefault();
 		setShowModal(true);
 		setAccept(true);
 		console.log(e.target);
 	};
 	const handleDecline = (e) => {
+		console.log('Handle decline', e);
+		e.preventDefault();
 		setShowModal(true);
 		setAccept(false);
 		console.log(e.target);
