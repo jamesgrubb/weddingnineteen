@@ -3,8 +3,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
 import Item from '../../../components/Menu/Item';
 const validationSchema = object().shape({
-	starter: string().required(),
-	main: string().required(),
+	Starter: string().required(),
+	Main: string().required(),
 });
 
 const Menu = ({ control }) => {
@@ -14,18 +14,18 @@ const Menu = ({ control }) => {
 	console.log(items);
 	return (
 		<div className='menu__mini'>
-			{items.starter ? (
+			{items.Starter ? (
 				<>
 					<em className='serif'>Starter</em>
-					<p>{items.starter}</p>
+					<p>{items.Starter}</p>
 				</>
 			) : (
 				''
 			)}
-			{items.main ? (
+			{items.Main ? (
 				<>
 					<em className='serif'>Main</em>
-					<p>{items.main}</p>
+					<p>{items.Main}</p>
 				</>
 			) : (
 				''
@@ -40,8 +40,8 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 	const { register, control, formState, handleSubmit } = useForm({
 		resolver: yupResolver(validationSchema),
 		defaultValues: {
-			starter: '',
-			main: '',
+			Starter: '',
+			Main: '',
 		},
 	});
 
@@ -95,7 +95,7 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 							<div className='menu-form__form-input'>
 								<input
 									type='radio'
-									{...register(`starter`)}
+									{...register(`Starter`)}
 									value={starter.fields.Nickname}
 									id={starter.id}
 								/>
@@ -103,7 +103,7 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 						</div>
 					);
 				})}
-				<div className='error'>{errors?.starter?.message}</div>
+				<div className='error'>{errors?.Starter?.message}</div>
 				<div className='menu-form__choice-header'>
 					<h4>Mains</h4>
 				</div>
@@ -122,19 +122,19 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 									key={main.id}
 									type='radio'
 									id={main.id}
-									{...register(`main`)}
+									{...register(`Main`)}
 									value={main.fields.Nickname}
 								/>
 							</div>
 						</div>
 					);
 				})}
-				<label className='error'>{errors?.main?.message}</label>
+				<label className='error'>{errors?.Main?.message}</label>
 				<div className='menu-form__choice-header'>
 					<h4>Desert</h4>
 				</div>
 				{deserts.map((item) => {
-					return <Item name={item.fields.Dish} />;
+					return <Item key={item.id} name={item.fields.Dish} />;
 				})}
 			</div>
 		</form>

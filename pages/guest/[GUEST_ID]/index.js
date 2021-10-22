@@ -3,13 +3,13 @@ import { UpdateGuest } from '../../../components/Forms/UpdateGuest';
 import { useForm } from 'react-hook-form';
 const Guest = (props) => {
 	const { handleSubmit } = useForm();
-	// console.log(guest, formItems);
+
 	const saveGuestDataHandler = async (enteredGuestData) => {
+		console.log(props.id);
 		const newGuestData = {
-			id: props.guest.id,
+			id: props.id,
 			fields: enteredGuestData,
 		};
-		console.log('guest data', newGuestData.fields);
 		try {
 			const result = await fetch('/api/accept', {
 				method: 'PUT',
@@ -58,6 +58,7 @@ export async function getStaticProps(context) {
 		const menuItems = getMinifiedRecords(menuRecords);
 
 		const guestId = context.params.GUEST_ID;
+		console.log('guest data', guestId);
 		const record = await table('Guests')
 			.select({
 				filterByFormula: `RECORD_ID() = '${guestId}'`,
@@ -67,6 +68,7 @@ export async function getStaticProps(context) {
 
 		return {
 			props: {
+				id: guestId,
 				guest: guest,
 				formItems: menuItems,
 			},
