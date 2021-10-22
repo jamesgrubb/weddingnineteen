@@ -1,20 +1,35 @@
 import { table, getMinifiedRecords } from '../../../utils/airtable';
 import { UpdateGuest } from '../../../components/Forms/UpdateGuest';
-
+import { useForm } from 'react-hook-form';
 const Guest = (props) => {
+	const { handleSubmit } = useForm();
 	// console.log(guest, formItems);
-	const handleUpdateGuest = async (data) => {
+	const saveGuestDataHandler = async (enteredGuestData) => {
 		const newGuestData = {
-			id: guest.id,
-			fields: data,
+			id: props.guest.id,
+			fields: enteredGuestData,
 		};
+		console.log('guest data', newGuestData.fields);
+		try {
+			const result = await fetch('/api/accept', {
+				method: 'PUT',
+				statusCode: 200,
+				body: JSON.stringify(newGuestData),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+			console.log(await result.json());
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return (
 		<div className='menu-wrapper'>
 			<UpdateGuest
 				key={props.formItems.id}
-				onHandleUpdateGuest={handleUpdateGuest}
+				onSaveGuestData={saveGuestDataHandler}
 				formItems={props.formItems}
 				guest={props.guest}
 			/>

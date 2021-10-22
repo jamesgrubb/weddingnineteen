@@ -34,7 +34,7 @@ const Menu = ({ control }) => {
 	);
 };
 
-export const UpdateGuest = ({ formItems, guest }) => {
+export const UpdateGuest = ({ formItems, guest, ...props }) => {
 	const { Name } = guest[0].fields;
 
 	const { register, control, formState, handleSubmit } = useForm({
@@ -49,6 +49,7 @@ export const UpdateGuest = ({ formItems, guest }) => {
 
 	const onSubmit = (data) => {
 		console.log(data);
+		props.onSaveGuestData(data);
 	};
 	const onError = (error) => {
 		console.log('Submit error: ', error);
@@ -64,6 +65,7 @@ export const UpdateGuest = ({ formItems, guest }) => {
 		return item.fields.Type === 'Desert';
 	});
 	console.log(starters);
+
 	return (
 		<form className='menu-form' onSubmit={handleSubmit(onSubmit, onError)}>
 			<div className='menu-form__view'>
