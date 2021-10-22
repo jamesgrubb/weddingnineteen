@@ -1,7 +1,17 @@
 .menu-wrapper {
 	--width: 95%;
 	--basis: 100%;
-	@include break-at(60ch) {
+	--display__form-group: block;
+	--text-align__form-group: center;
+	--width__form-group: 100%;
+	--gap__form-group: var(--gap-sm);
+	--border: 1px solid;
+	@include break-at(90ch) {
+		--border: 0px solid;
+		--gap__form-group: 0rem;
+		--width__form-group: 70%;
+		--text-align__form-group: left;
+		--display__form-group: flex;
 		--width: 70%;
 		--basis: 60%;
 	}
@@ -19,9 +29,11 @@
 	color: var(--color-gray-dark);
 	width: var(--width);
 	display: flex;
+	flex-wrap: wrap;
 	gap: var(--gap-md);
 
 	&__view {
+		order: 2;
 		display: flex;
 		flex: 1 30%;
 		width: 100%;
@@ -44,23 +56,28 @@
 	}
 	&__choice-header {
 		padding-block-start: var(--gap-md);
+		text-align: center;
 	}
 	&__form-group {
-		display: flex;
+		display: var(--display__form-group);
+		text-align: var(--text-align__form-group);
 		// flex-wrap: wrap;
 		font-size: var(--text-md);
-		line-height: 1.3;
-
-		align-items: center;
+		line-height: 1.5;
+		color: var(--color-gray-base);
+		align-items: flex-end;
 		justify-content: space-between;
 		padding: var(--gap-sm) var(--gap-sm);
+		& > * + * {
+			margin-block-start: var(--gap__form-group);
+		}
 		&:hover {
 			background-color: var(--color-brand-light);
 		}
 	}
 	&__form-label {
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: space-between;
 		flex: 0 90%;
 		position: relative;
@@ -68,22 +85,24 @@
 			content: '';
 			height: 1px;
 			flex: 1;
-			border-bottom: 1px dashed var(--color-gray-dark);
+			border-bottom: 1px solid;
 		}
 		& > label {
+			border-block-end: 1px solid;
 			cursor: pointer;
-			flex: 0 70%;
+			flex: 0 var(--width__form-group);
 		}
 	}
 	&__form-input {
 		flex: 0 70px;
-		display: flex;
+		display: var(--display__form-group);
 		padding-inline-start: var(--gap-xs);
+		border-block-end: var(--border);
 		& > input[type='radio'] {
 			padding: 0;
 			margin: 0;
-			width: 2rem;
-			height: 2rem;
+			width: 1.5rem;
+			height: 1.5rem;
 		}
 	}
 }
