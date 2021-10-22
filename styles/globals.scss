@@ -7,7 +7,7 @@
 @import 'cover';
 @import 'rsvp';
 @import 'form';
-
+@import 'menu';
 html {
 	@each $key, $size in $sizes {
 		--text-#{$key}: #{$size}rem;
@@ -20,7 +20,7 @@ html {
 	}
 	@media (min-width: 60ch) {
 		@each $key, $size in $sizes {
-			--text-#{$key}: #{$size * 1.8}rem;
+			--text-#{$key}: #{$size * 1.4}rem;
 		}
 		@each $key, $gap in $gaps {
 			--gap-#{$key}: #{$gap * 1.8}rem;
@@ -42,6 +42,7 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
+	accent-color: var(--color-brand-dark);
 }
 
 a {

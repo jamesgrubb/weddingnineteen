@@ -1,3 +1,6 @@
 module.exports = {
-  reactStrictMode: true,
-}
+	reactStrictMode: true,
+	env: {
+		AIRTABLE_API_KEY: process.env.AIRTABLE_API_KEY,
+	},
+};

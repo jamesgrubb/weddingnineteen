@@ -48,14 +48,7 @@ function Rsvp(props) {
 							style={{ cursor: 'pointer' }}
 							className='btn'
 							onClick={props.handleAccept}>
-							Accept
-						</button>
-						<button
-							type='button'
-							style={{ cursor: 'pointer' }}
-							className='btn'
-							onClick={props.handleDecline}>
-							Decline
+							RSVP
 						</button>
 					</div>
 				</div>
