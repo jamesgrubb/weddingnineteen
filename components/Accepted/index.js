@@ -33,11 +33,13 @@ const Accepted = () => {
 	};
 
 	useEffect(async () => {
-		if (guestData.length === 0) {
+		if (guestData.length === 0 || guestData[0].id === 'undefined') {
 			setFound(!found);
 			return;
+		} else if (guestData.length > 0) {
+			router.push(`/guest/${guestData[0].id}`);
 		}
-		router.push(`/guest/${guestData[0].id}`);
+
 		try {
 			const accept = await fetch('/api/accept', {
 				method: 'PUT',

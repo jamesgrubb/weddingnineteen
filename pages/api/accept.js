@@ -1,12 +1,27 @@
 import { table, getMinifiedRecords } from '../../utils/airtable';
 
+function toTitleCase(str) {
+	return str
+		.toLowerCase()
+		.split(' ')
+		.map(function (word) {
+			return word.charAt(0).toUpperCase() + word.slice(1);
+		})
+		.join(' ');
+}
+
 export default async function handler(req, res) {
 	if (req.method === 'POST') {
 		try {
 			const { name, surname } = req.body;
 			const records = await table('Guests')
 				.select({
-					filterByFormula: `AND({name} = "${name}",{surname} = "${surname}")`,
+					filterByFormula: `OR(
+						(AND({name} = "${name}",{surname} = "${surname}")),
+						(AND({name} = "${toTitleCase(name)}",{surname} = "${toTitleCase(surname)}")),
+						(AND({name} = "${name}",FIND("${surname}",{surname})>0)),
+						(AND({name} = "${name}",FIND(REGEX_REPLACE("${surname}",'[^-]*','' ),{surname})>0))											
+						)`,
 				})
 				.firstPage();
 			const minifiedRecords = getMinifiedRecords(records);
