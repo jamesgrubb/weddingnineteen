@@ -7,7 +7,7 @@ import Accepted from '../components/Accepted';
 import Section from '../components/Section';
 import Cover from '../components/Cover';
 import RSVP from '../components/RSVP';
-import AcceptForm from '../components/RSVP/AcceptForm';
+
 export default function Home() {
 	const [showModal, setShowModal] = useState(false);
 	const [accept, setAccept] = useState(null);
@@ -36,7 +36,7 @@ export default function Home() {
 					title='Welcome'
 					subtitle='text'>
 					<p>
-						Welcome, We{"'"}re finally (hopefully!) getting married
+						Welcome, We&apos;re finally (hopefully!) getting married
 						on Tuesday 28th December 2021 and are looking forward to
 						celebrating with you.
 					</p>
@@ -48,8 +48,8 @@ export default function Home() {
 					subtitle='text'>
 					<p>
 						There are a few rooms available at the venue, if you
-						haven't contacted us already and if you would like to
-						stay speak to Lucy and mention you are part of the
+						haven&apos;t contacted us already and if you would like
+						to stay speak to Lucy and mention you are part of the
 						wedding party.
 					</p>
 					<p>
