@@ -1,8 +1,4 @@
-const Nav = () => {};
-
-export default Nav;
-
-const navitems = [
+const Links = [
 	{
 		path: '/#venue',
 		name: 'the venue',
@@ -16,3 +12,5 @@ const navitems = [
 		name: 'live',
 	},
 ];
+
+export default Links;
