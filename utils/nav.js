@@ -1,7 +1,7 @@
 const Links = [
 	{
 		path: '/#venue',
-		name: 'the venue',
+		name: 'venue',
 	},
 	{
 		path: '/#rsvp',
@@ -10,6 +10,14 @@ const Links = [
 	{
 		path: '/live',
 		name: 'live',
+	},
+	{
+		path: '/the-c-word',
+		name: 'the c word',
+	},
+	{
+		path: '/wise-words',
+		name: 'wise words',
 	},
 ];
 

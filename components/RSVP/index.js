@@ -2,7 +2,7 @@ import React from 'react';
 
 function Rsvp(props) {
 	return (
-		<div className='rsvp'>
+		<div id='rsvp' className='rsvp'>
 			<div className='rsvp__content'>
 				<figure className='rsvp__figure'>
 					<svg

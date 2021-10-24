@@ -2,11 +2,13 @@
 	--width: 95%;
 	--basis: 100%;
 	--display__form-group: block;
+	--align-items__from-group: center;
 	--text-align__form-group: center;
 	--width__form-group: 100%;
 	--gap__form-group: var(--gap-sm);
 	--border: 1px solid;
 	@include break-at(90ch) {
+		--align-items__from-group: flex-start;
 		--border: 0px solid;
 		--gap__form-group: 0rem;
 		--width__form-group: 70%;
@@ -49,6 +51,7 @@
 		padding: inherit;
 	}
 	&__choice {
+		align-items: var(--align-items__from-group);
 		flex: 1 70%;
 		display: flex;
 		flex-direction: column;
@@ -61,6 +64,7 @@
 	&__form-group {
 		display: var(--display__form-group);
 		text-align: var(--text-align__form-group);
+		width: 100%;
 		// flex-wrap: wrap;
 		font-size: var(--text-md);
 		line-height: 1.5;
@@ -88,7 +92,7 @@
 			border-bottom: 1px solid;
 		}
 		& > label {
-			border-block-end: 1px solid;
+			// border-block-end: 1px solid;
 			cursor: pointer;
 			flex: 0 var(--width__form-group);
 		}

@@ -1,11 +1,11 @@
 import { table, getMinifiedRecords } from '../../../utils/airtable';
 import { UpdateGuest } from '../../../components/Forms/UpdateGuest';
 import { useForm } from 'react-hook-form';
+import Blank from '../../../components/Layouts/Blank';
 const Guest = (props) => {
 	const { handleSubmit } = useForm();
 
 	const saveGuestDataHandler = async (enteredGuestData) => {
-		console.log(props.id);
 		const newGuestData = {
 			id: props.id,
 			fields: enteredGuestData,
@@ -19,7 +19,6 @@ const Guest = (props) => {
 					'Content-Type': 'application/json',
 				},
 			});
-			console.log(await result.json());
 		} catch (error) {
 			console.error(error);
 		}
@@ -58,7 +57,7 @@ export async function getStaticProps(context) {
 		const menuItems = getMinifiedRecords(menuRecords);
 
 		const guestId = context.params.GUEST_ID;
-		console.log('guest data', guestId);
+
 		const record = await table('Guests')
 			.select({
 				filterByFormula: `RECORD_ID() = '${guestId}'`,
@@ -77,3 +76,7 @@ export async function getStaticProps(context) {
 		console.error(error);
 	}
 }
+
+Guest.getLayout = function getLayout(page) {
+	return <Blank>{page}</Blank>;
+};

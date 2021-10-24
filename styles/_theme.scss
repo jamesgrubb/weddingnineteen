@@ -1,4 +1,5 @@
 @import './colors.module';
+$color-error: #ff6b47 !default;
 $color-brand: $green !default;
 $color-gray-dark: #2c2c2c !default;
 $color-gray-base: #706f6f !default;
@@ -11,8 +12,10 @@ $color-focus: mix($color-primary, $color-black, 20%) !default;
 $color-hover: mix($color-primary, $color-black, 80%) !default;
 
 $colors: (
+	error: $color-error,
 	gray-base: $color-gray-base,
 	brand-dark: $color-brand,
+	brand-base: $color-brand,
 	gray-dark: $color-gray-dark,
 	brand-light: $color-brand-light,
 	primary: $color-primary,

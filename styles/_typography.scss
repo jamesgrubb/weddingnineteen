@@ -44,10 +44,19 @@ p {
 .serif {
 	font-family: 'Hatton', serif;
 }
+
+.script {
+	font-family: 'Reenie Beanie', cursive;
+}
+
 $sizes: (
 	xs: 0.4,
 	sm: 0.6,
 	md: 1,
 	lg: 1.8,
 	xl: 2.4,
+);
+
+$letterSpacing: (
+	base: 0.3rem,
 );

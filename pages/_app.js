@@ -1,11 +1,7 @@
 import '../styles/globals.scss';
-import DayAndNight from '../components/Layouts/dayAndNight';
 function MyApp({ Component, pageProps }) {
-	return (
-		<DayAndNight>
-			<Component {...pageProps} />;
-		</DayAndNight>
-	);
+	const getLayout = Component.getLayout || ((page) => page);
+	return getLayout(<Component {...pageProps} />);
 }
 
 export default MyApp;

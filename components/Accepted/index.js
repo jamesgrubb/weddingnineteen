@@ -1,7 +1,7 @@
 import styles from '/styles/accept.module.scss';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 const Accepted = () => {
 	const [guestData, setGuestData] = useState('');
 	const [found, setFound] = useState(true);
@@ -13,6 +13,8 @@ const Accepted = () => {
 		reset,
 		formState: { errors },
 	} = useForm();
+
+	const buttonRef = useRef();
 
 	const onSubmit = async (data) => {
 		try {
@@ -53,7 +55,6 @@ const Accepted = () => {
 					'Content-Type': 'application/json',
 				},
 			});
-			console.log(await accept.json());
 		} catch (error) {
 			console.error(error);
 		}
@@ -91,7 +92,7 @@ const Accepted = () => {
 							id='name'
 						/>
 						{errors.name && errors.name.type === 'required' && (
-							<p style={{ color: 'red' }}>Name is required</p>
+							<p className='error'>Name is required</p>
 						)}
 					</div>
 					<div className={styles.content__formItem}>
@@ -110,12 +111,13 @@ const Accepted = () => {
 							id='surname'
 						/>
 						{errors.surname && (
-							<p style={{ color: 'red' }}>Surname is required</p>
+							<p className='error'>Surname is required</p>
 						)}
 					</div>
 				</div>
 				<div className={styles.content__formBtn}>
 					<button
+						ref={buttonRef}
 						{...register('accept')}
 						className='btn btn--primary'>
 						ACCEPT

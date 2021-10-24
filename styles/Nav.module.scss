@@ -1,0 +1,102 @@
+.nav {
+	--display: unset;
+	--menu-display: none;
+	--max-width: 90vw;
+	--position: fixed;
+	--inset: 0rem;
+	--align-items: center;
+	--justify-content: center;
+	--flex-direction: column;
+	--background-color: var(--color-brand-light);
+	width: 100%;
+	@media (min-width: 100ch) {
+		--menu-display: flex;
+		--display: none;
+		--background-color: none;
+		--align-items: center;
+		--justify-content: center;
+		--flex-direction: row;
+		--max-width: 90ch;
+		--position: static;
+		--inset: auto;
+	}
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--color-gray-base);
+	transition: background-color 0.3s;
+	&Scrolling {
+		background-color: transparentize($color: #fff, $amount: 0.5);
+	}
+	&Scrolled {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+	}
+	&__content {
+		width: 100%;
+		max-width: var(--max-width);
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		padding-inline: var(--gap-md);
+		padding-block: var(--gap-sm);
+	}
+	&__items {
+		inset: var(--inset);
+		position: var(--position);
+		display: var(--menu-display);
+		align-items: center;
+		justify-content: center;
+		flex-direction: var(--flex-direction);
+		list-style: none;
+		background-color: var(--background-color);
+		& > * + * {
+			margin-inline-start: var(--gap-sm);
+		}
+		&Open {
+			display: flex;
+		}
+	}
+	&__item {
+		font-family: 'Hatton', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: var(--letter-spacing-base);
+		transition: all 0.3s;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		position: relative;
+
+		&:after {
+			content: '';
+			width: 60%;
+			height: 3px;
+			background-color: var(--color-brand-dark);
+			position: absolute;
+			transform: scale(0, 1);
+			transition: all 0.18s;
+		}
+		&:hover {
+			color: var(--color-gray-dark);
+		}
+		&:hover:after,
+		&Active:after {
+			transform: scale(1, 1);
+		}
+	}
+	&__toggle {
+		z-index: 10;
+		display: var(--display);
+	}
+	&__logo {
+		z-index: 10;
+	}
+}

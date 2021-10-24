@@ -11,7 +11,7 @@ const Menu = ({ control }) => {
 	const items = useWatch({
 		control,
 	});
-	console.log(items);
+
 	return (
 		<div className='menu__mini'>
 			{items.Starter ? (
@@ -48,7 +48,6 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 	const { errors } = formState;
 
 	const onSubmit = (data) => {
-		console.log(data);
 		props.onSaveGuestData(data);
 	};
 	const onError = (error) => {
@@ -64,7 +63,6 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 	const deserts = formItems.filter((item) => {
 		return item.fields.Type === 'Desert';
 	});
-	console.log(starters);
 
 	return (
 		<form className='menu-form' onSubmit={handleSubmit(onSubmit, onError)}>
@@ -74,7 +72,10 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 						Your choice {Name}
 					</div>
 					<Menu control={control} />
-					<input className='btn' type='submit' />
+					<button type='submit' className='btn'>
+						<span>send order</span>
+					</button>
+					{/* <input className='btn' type='submit' /> */}
 				</div>
 			</div>
 			<div className='menu-form__choice'>
@@ -103,7 +104,12 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 						</div>
 					);
 				})}
-				<div className='error'>{errors?.Starter?.message}</div>
+				{errors?.Starter ? (
+					<div className='error'>{errors?.Starter?.message}</div>
+				) : (
+					''
+				)}
+
 				<div className='menu-form__choice-header'>
 					<h4>Mains</h4>
 				</div>
@@ -129,7 +135,12 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 						</div>
 					);
 				})}
-				<label className='error'>{errors?.Main?.message}</label>
+				{errors?.Main ? (
+					<label className='error'>{errors?.Main?.message}</label>
+				) : (
+					''
+				)}
+
 				<div className='menu-form__choice-header'>
 					<h4>Desert</h4>
 				</div>
