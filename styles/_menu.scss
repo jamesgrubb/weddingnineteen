@@ -14,9 +14,10 @@
 		--width__form-group: 70%;
 		--text-align__form-group: left;
 		--display__form-group: flex;
-		--width: 70%;
+		--width: 80ch;
 		--basis: 60%;
 	}
+	padding: var(--gap-xxl, 8rem) 0;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -60,6 +61,7 @@
 	&__choice-header {
 		padding-block-start: var(--gap-md);
 		text-align: center;
+		align-self: center;
 	}
 	&__form-group {
 		display: var(--display__form-group);

@@ -1,6 +1,6 @@
 import GlobalNav from '../../GlobalNav';
 import styles from '../Layout.module.scss';
-const Blank = ({ children }) => {
+const Blank = ({ children }, ...props) => {
 	return (
 		<>
 			<GlobalNav />

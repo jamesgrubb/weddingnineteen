@@ -1,0 +1,20 @@
+.h1,
+.h2,
+.h3 {
+	color: var(--color-gray-base);
+}
+
+.h1 {
+	margin: var(--gap-xxl) 0 var(--gap-md);
+	font-size: var(--text-xl);
+}
+
+.h2 {
+	max-width: 16ch;
+	text-align: center;
+	margin: var(--gap-md) 0;
+	font-size: var(--text-lg);
+	text-transform: none;
+	font-weight: normal;
+	letter-spacing: normal;
+}

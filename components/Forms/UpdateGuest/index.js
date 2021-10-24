@@ -2,39 +2,46 @@ import { useForm, useWatch } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
 import Item from '../../../components/Menu/Item';
+import styles from './Menu.module.scss';
 const validationSchema = object().shape({
 	Starter: string().required(),
 	Main: string().required(),
 });
 
-const Menu = ({ control }) => {
+const Menu = ({ control, intolerances }) => {
 	const items = useWatch({
 		control,
 	});
 
 	return (
-		<div className='menu__mini'>
-			{items.Starter ? (
-				<>
-					<em className='serif'>Starter</em>
-					<p>{items.Starter}</p>
-				</>
-			) : (
-				''
-			)}
-			{items.Main ? (
-				<>
-					<em className='serif'>Main</em>
-					<p>{items.Main}</p>
-				</>
-			) : (
-				''
-			)}
+		<div className={styles.menu}>
+			<div className={styles.menuItems}>
+				<strong className={styles.menuTitle}>your starter</strong>
+				{items.Starter ? (
+					<p className={styles.menuItem}>{items.Starter}</p>
+				) : (
+					''
+				)}
+			</div>
+			<div className={styles.menuItems}>
+				<strong className={styles.menuTitle}>your main course</strong>
+
+				{items.Main ? (
+					<p className={styles.menuItem}>{items.Main}</p>
+				) : (
+					''
+				)}
+			</div>
+			<div className={styles.intolerances}>
+				{intolerances.map((item) => {
+					<p>{item.id}</p>;
+				})}
+			</div>
 		</div>
 	);
 };
 
-export const UpdateGuest = ({ formItems, guest, ...props }) => {
+export const UpdateGuest = ({ formItems, guest, intolerances, ...props }) => {
 	const { Name } = guest[0].fields;
 
 	const { register, control, formState, handleSubmit } = useForm({
@@ -71,7 +78,7 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 					<div className='menu-form__view-header'>
 						Your choice {Name}
 					</div>
-					<Menu control={control} />
+					<Menu intolerances={intolerances} control={control} />
 					<button type='submit' className='btn'>
 						<span>send order</span>
 					</button>
@@ -79,7 +86,6 @@ export const UpdateGuest = ({ formItems, guest, ...props }) => {
 				</div>
 			</div>
 			<div className='menu-form__choice'>
-				<h1 className='menu-form__title'>Menu</h1>
 				<div className='menu-form__choice-header'>
 					<h4>Starters</h4>
 				</div>
