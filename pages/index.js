@@ -26,6 +26,7 @@ export default function Home() {
 	return (
 		<>
 			<Section
+				id='Welcome'
 				headerBackground='yellow'
 				bodyBackground='blue'
 				title='Welcome'
@@ -37,6 +38,7 @@ export default function Home() {
 				</p>
 			</Section>
 			<Section
+				id='Venue'
 				headerBackground='orange'
 				bodyBackground='cornflowerblue'
 				title='Venue'
@@ -61,6 +63,7 @@ export default function Home() {
 				</p>
 			</Section>
 			<Section
+				id='Day'
 				headerBackground='orange'
 				bodyBackground='cornflowerblue'
 				title='Day'

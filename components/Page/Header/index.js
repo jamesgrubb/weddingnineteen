@@ -7,9 +7,13 @@ const Title = ({ Level, className, children }) => {
 	);
 };
 
+Title.defaultProps = {
+	Level: 'h1',
+};
+
 Title.propTypes = {
 	Level: PropTypes.string.isRequired,
-	className: PropTypes.string,
+	className: PropTypes.string.isRequired,
 };
 
 export default Title;

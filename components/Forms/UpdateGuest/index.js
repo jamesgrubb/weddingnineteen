@@ -8,6 +8,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
 import Item from '../../../components/Menu/Item';
 import styles from './Menu.module.scss';
+
 const validationSchema = object().shape({
 	Starter: string().required(),
 	Main: string().required(),

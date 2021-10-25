@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Button from '../Page/Button';
 function Rsvp(props) {
 	return (
 		<div id='rsvp' className='rsvp'>
@@ -43,6 +43,12 @@ function Rsvp(props) {
 						either way, please let us know
 					</h2>
 					<div className='rsvp__buttons'>
+						{/* <Button
+							as='link'
+							icon='coffee'
+							click={props.handleAccept}>
+							RSVP
+						</Button> */}
 						<button
 							type='button'
 							style={{ cursor: 'pointer' }}

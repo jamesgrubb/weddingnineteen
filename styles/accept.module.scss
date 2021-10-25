@@ -1,4 +1,4 @@
-@import 'theme';
+// @import 'theme';
 .content {
 	overflow-y: auto;
 	background-color: var(--color-gray-light);
@@ -33,8 +33,8 @@
 		z-index: -1;
 	}
 	&__text {
-		padding-block: 4rem;
-		background-color: map-get($colors, gray);
+		padding-block: var(--gap-xl);
+		background-color: var(--color-brand-light);
 		display: var(--display);
 		flex-direction: var(--direction, column);
 		gap: 0.8rem;
@@ -43,6 +43,7 @@
 		justify-content: center;
 		align-items: flex-start;
 		width: 100%;
+		color: var(--color-gray-base);
 	}
 	&__title {
 		margin: 0 auto;
@@ -51,16 +52,19 @@
 		font-weight: var(--font-weight, normal);
 		font-size: 2rem;
 		text-transform: uppercase;
-		& h1 {
-			max-width: 50ch;
-			font-size: inherit;
-			line-height: inherit;
-		}
+	}
+	&__header {
+		max-width: 50ch;
+		font-size: inherit;
+		line-height: inherit;
 	}
 	&__subtitle {
 		margin: 0 auto;
 		width: var(--width);
 		& h2 {
+			font-family: 'Poppins', serif;
+			text-transform: none;
+			letter-spacing: 0;
 			max-width: 35ch;
 			font-weight: var(--font-weight, normal);
 			font-size: 1.5rem;
@@ -69,7 +73,7 @@
 
 	&__form {
 		padding: var(--padding-block) var(--padding-inline);
-		background: var(--color-gray-light);
+		background: var(--color-gray-base);
 		height: 100%;
 		width: 100%;
 		display: flex;
@@ -112,7 +116,7 @@
 
 .label {
 	font-size: inherit;
-	color: map-get($colors, gray-dark);
+	color: var(--color-gray-base);
 	font-weight: 700;
 }
 
@@ -126,7 +130,7 @@
 	border: none;
 	border-bottom: 2px solid gray;
 	max-width: 100%;
-	color: map-get($colors, gray-dark);
+	color: var(--color-gray-base);
 	font-weight: 700;
 	font-size: 1.2rem;
 

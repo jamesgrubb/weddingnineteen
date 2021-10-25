@@ -1,5 +1,5 @@
 .section {
-	padding-block: var(--padding-block, var(--gap-lg));
+	padding-block: var(--gap-xl);
 	--width-content: 95%;
 	--align: center;
 	--align-even: flex-start;
@@ -47,6 +47,7 @@
 		// margin: 0 auto;
 	}
 	&__title {
+		margin-block-start: var(--gap-xxl);
 		font-size: var(--size-title);
 		text-transform: uppercase;
 		letter-spacing: 0.3rem;

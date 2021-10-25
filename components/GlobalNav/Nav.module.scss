@@ -1,5 +1,5 @@
 .nav {
-	--display: unset;
+	--display: inline-flex;
 	--menu-display: none;
 	--max-width: 90vw;
 	--position: fixed;
@@ -68,7 +68,7 @@
 	&__item {
 		font-family: 'Hatton', sans-serif;
 		text-transform: uppercase;
-		letter-spacing: var(--letter-spacing-base);
+		letter-spacing: var(--letter-spacing-sm);
 		transition: all 0.3s;
 		display: flex;
 		align-items: flex-end;
@@ -95,8 +95,21 @@
 	&__toggle {
 		z-index: 10;
 		display: var(--display);
+		appearance: none;
+		border: none;
+		width: 2.4rem;
+		height: 2.4rem;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		margin: 0;
 	}
 	&__logo {
+		font-family: 'Hatton', serif;
+		color: var(--color-gray-dark);
+		font-size: var(--text-md);
 		z-index: 10;
+	}
+	&__icon {
 	}
 }

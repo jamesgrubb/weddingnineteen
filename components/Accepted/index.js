@@ -2,6 +2,8 @@ import styles from '/styles/accept.module.scss';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState, useRef } from 'react';
+import Title from '../Page/Header';
+import Button from '../Page/Button';
 const Accepted = () => {
 	const [guestData, setGuestData] = useState('');
 	const [found, setFound] = useState(true);
@@ -63,7 +65,7 @@ const Accepted = () => {
 		<div className={styles.content}>
 			<div className={styles.content__text}>
 				<div className={styles.content__title}>
-					<h1>Planning to join us? Great!</h1>
+					<Title className={styles.__header}>Hello</Title>
 				</div>
 				<div className={styles.content__subtitle}>
 					<h2>

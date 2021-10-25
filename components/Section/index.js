@@ -5,15 +5,11 @@ const Section = (props) => {
 	};
 
 	return (
-		<section className='section'>
+		<section id={props.title.toLowerCase()} className='section'>
 			<div style={style} className='section__item'>
 				<div className='section__content'>
 					<header className='section__header'>
-						<h2
-							id={props.title.toLowerCase()}
-							className='section__title'>
-							{props.title}
-						</h2>
+						<h2 className='section__title'>{props.title}</h2>
 						<h3 className='section__subtitle'>{props.subtitle}</h3>
 					</header>
 				</div>
