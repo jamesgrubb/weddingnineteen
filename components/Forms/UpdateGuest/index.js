@@ -27,7 +27,7 @@ const Menu = ({ control, intolerances }) => {
 				{items.Starter ? (
 					<p className={styles.menuItem}>{items.Starter}</p>
 				) : (
-					''
+					<p className={styles.menuItem}>Please choose a starter</p>
 				)}
 			</div>
 			<div className={styles.menuItems}>
@@ -36,7 +36,7 @@ const Menu = ({ control, intolerances }) => {
 				{items.Main ? (
 					<p className={styles.menuItem}>{items.Main}</p>
 				) : (
-					''
+					<p className={styles.menuItem}>Please choose a main</p>
 				)}
 			</div>
 			<div className={styles.menuItems}>
@@ -66,7 +66,7 @@ export const UpdateGuest = ({ formItems, guest, intolerances, ...props }) => {
 		defaultValues: {
 			Starter: '',
 			Main: '',
-			Diet: [],
+			Intolerance: [],
 		},
 	});
 	const { register, control, formState, handleSubmit } = methods;
