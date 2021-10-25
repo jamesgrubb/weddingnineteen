@@ -11,9 +11,20 @@
 	color: var(--color-gray-base);
 }
 .menuItems {
+	> div {
+		display: flex;
+		gap: var(--gap-sm);
+	}
+	> div label {
+		font-weight: bold;
+		order: 1;
+	}
+	> div input[type='checkbox'] {
+		order: 0;
+	}
 	&:last-child {
+		flex: 0 0 33.33%;
 		margin-inline-start: auto;
-		background-color: red;
 	}
 
 	> * + * {
@@ -29,10 +40,19 @@
 .menuSubmit {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	margin-block-start: var(--gap-sm);
-	align-items: center;
-	> p {
-		flex: 0 1 66.6%;
+	align-items: flex-end;
+	gap: var(--gap-sm);
+	&:last-child > button {
+		flex: 0 0 33.3%;
+		// width: 100%;
+	}
+
+	p {
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: calc(66.6% - var(--gap-sm));
 		font-size: var(--text-md);
 		color: mix(#000, #fff, 20%);
 		font-family: 'Hatton', serif;
