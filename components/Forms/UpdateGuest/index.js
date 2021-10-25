@@ -12,6 +12,7 @@ const Menu = ({ control, intolerances }) => {
 	const items = useWatch({
 		control,
 	});
+	console.log(`intolerances`, intolerances);
 
 	return (
 		<div className={styles.menu}>
@@ -32,9 +33,20 @@ const Menu = ({ control, intolerances }) => {
 					''
 				)}
 			</div>
-			<div className={styles.intolerances}>
+			<div className={styles.menuItems}>
+				<strong className={styles.menuTitle}>Food Intolerance</strong>
 				{intolerances.map((item) => {
-					<p>{item.id}</p>;
+					return (
+						<div key={item.id} className={styles.dietGroup}>
+							<label htmlFor={item.id}>{item.fields.Name}</label>
+							<input
+								type='checkbox'
+								// {...register(`Intolerance`)}
+								id={item.id}
+								value={item.fields.Name}
+							/>
+						</div>
+					);
 				})}
 			</div>
 		</div>
@@ -49,6 +61,7 @@ export const UpdateGuest = ({ formItems, guest, intolerances, ...props }) => {
 		defaultValues: {
 			Starter: '',
 			Main: '',
+			Intolerance: [],
 		},
 	});
 
@@ -75,13 +88,17 @@ export const UpdateGuest = ({ formItems, guest, intolerances, ...props }) => {
 		<form className='menu-form' onSubmit={handleSubmit(onSubmit, onError)}>
 			<div className='menu-form__view'>
 				<div className='menu-form__view-content'>
-					<div className='menu-form__view-header'>
-						Your choice {Name}
-					</div>
 					<Menu intolerances={intolerances} control={control} />
-					<button type='submit' className='btn'>
-						<span>send order</span>
-					</button>
+					<div className={styles.menuSubmit}>
+						<p>
+							Happy with your choice? Send your order. otherwise,
+							choose gain. If you change your mind after clicking
+							the send button. Start over
+						</p>
+						<button type='submit' className='btn'>
+							<span>send order</span>
+						</button>
+					</div>
 					{/* <input className='btn' type='submit' /> */}
 				</div>
 			</div>

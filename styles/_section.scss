@@ -2,8 +2,8 @@
 	padding-block: var(--padding-block, var(--gap-lg));
 	--width-content: 95%;
 	--align: center;
-	--align-even: center;
-	--align-odd: center;
+	--align-even: flex-start;
+	--align-odd: flex-end;
 	--size-title: var(--text-md);
 	@include break-at(65ch) {
 		--size-title: var(--text-xl);
@@ -13,10 +13,12 @@
 		--align-odd: flex-end;
 		--width-content: 75%;
 	}
+	min-height: 500px;
 	display: flex;
+	width: 100%;
 	flex-direction: column;
 	align-items: center;
-	background-color: var(--color-gray-dark);
+	background-color: var(--color-gray-base);
 	&:nth-child(even) {
 		background-color: var(--color-brand-dark);
 		.section__item .section__content {
@@ -27,6 +29,7 @@
 		}
 	}
 	&__item {
+		max-width: 100ch;
 		display: flex;
 		justify-content: center;
 		margin: 0 auto;

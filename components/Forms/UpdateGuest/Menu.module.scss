@@ -1,0 +1,41 @@
+.menu {
+	> * + * {
+		margin-inline-start: var(--gap-md);
+	}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.menuTitle {
+	text-transform: uppercase;
+	color: var(--color-gray-base);
+}
+.menuItems {
+	&:last-child {
+		margin-inline-start: auto;
+		background-color: red;
+	}
+
+	> * + * {
+		margin-block-start: var(--gap-xs);
+	}
+}
+.menuItem {
+	font-family: 'Hatton', serif;
+	font-size: var(--text-md);
+	font-weight: 500;
+}
+
+.menuSubmit {
+	display: flex;
+	justify-content: space-between;
+	margin-block-start: var(--gap-sm);
+	align-items: center;
+	> p {
+		flex: 0 1 66.6%;
+		font-size: var(--text-md);
+		color: mix(#000, #fff, 20%);
+		font-family: 'Hatton', serif;
+		line-height: 1.5;
+	}
+}

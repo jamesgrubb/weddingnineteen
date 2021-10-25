@@ -9,6 +9,9 @@
 @import 'form';
 @import 'menu';
 html {
+	@each $key, $width in $widths {
+		--width-#{$key}: #{$width}ch;
+	}
 	@each $key, $spacing in $letterSpacing {
 		--letter-spacing-#{$key}: #{$spacing};
 	}
