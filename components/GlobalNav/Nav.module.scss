@@ -1,15 +1,20 @@
 .nav {
+	--justify-content: space-around;
+	--height: 75vh;
 	--display: inline-flex;
 	--menu-display: none;
 	--max-width: 90vw;
 	--position: fixed;
+	--gap: 0rem;
 	--inset: 0rem;
 	--align-items: center;
-	--justify-content: center;
 	--flex-direction: column;
 	--background-color: var(--color-brand-light);
 	width: 100%;
 	@media (min-width: 100ch) {
+		--justify-content: center;
+		--height: auto;
+		--gap: var(--gap-lg);
 		--menu-display: flex;
 		--display: none;
 		--background-color: none;
@@ -42,7 +47,7 @@
 	}
 	&__content {
 		width: 100%;
-		max-width: var(--max-width);
+		// max-width: var(--max-width);
 		display: flex;
 		align-items: baseline;
 		justify-content: space-between;
@@ -50,16 +55,18 @@
 		padding-block: var(--gap-sm);
 	}
 	&__items {
+		font-size: var(--text-sm);
 		inset: var(--inset);
 		position: var(--position);
 		display: var(--menu-display);
 		align-items: center;
-		justify-content: center;
+		justify-content: var(--justify-content);
+		height: var(--height);
 		flex-direction: var(--flex-direction);
 		list-style: none;
 		background-color: var(--background-color);
 		& > * + * {
-			margin-inline-start: var(--gap-sm);
+			margin-inline-start: var(--gap);
 		}
 		&Open {
 			display: flex;
@@ -68,7 +75,7 @@
 	&__item {
 		font-family: 'Hatton', sans-serif;
 		text-transform: uppercase;
-		letter-spacing: var(--letter-spacing-sm);
+		letter-spacing: var(--letter-spacing-xs);
 		transition: all 0.3s;
 		display: flex;
 		align-items: flex-end;

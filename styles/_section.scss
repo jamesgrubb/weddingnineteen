@@ -1,4 +1,5 @@
 .section {
+	--flex-wrap: wrap;
 	padding-block: var(--gap-xl);
 	--width-content: 95%;
 	--align: center;
@@ -7,6 +8,7 @@
 	--size-title: var(--text-md);
 	@include break-at(65ch) {
 		--size-title: var(--text-xl);
+		--flex-wrap: nowrap;
 	}
 	@include break-at(90ch) {
 		--align-even: flex-start;
@@ -29,17 +31,19 @@
 		}
 	}
 	&__item {
-		max-width: 100ch;
+		max-width: var(--width-max);
 		display: flex;
 		justify-content: center;
 		margin: 0 auto;
 		width: 100%;
+		flex-wrap: var(--flex-wrap);
 		background-color: inherit;
 		& + * {
 			background-color: inherit;
 		}
 	}
 	&__content {
+		flex-wrap: var(--flex-wrap);
 		display: flex;
 		flex-direction: column;
 		align-items: var(--align-odd);
@@ -47,7 +51,7 @@
 		// margin: 0 auto;
 	}
 	&__title {
-		margin-block-start: var(--gap-xxl);
+		margin-block: var(--gap-xxl);
 		font-size: var(--size-title);
 		text-transform: uppercase;
 		letter-spacing: 0.3rem;
@@ -56,6 +60,33 @@
 		width: var(--width-content);
 	}
 	&__body {
+		color: var(--color-gray-dark);
 		width: var(--width-content);
+		font-family: 'Hatton';
+		display: flex;
+		align-items: flex-end;
+		gap: var(--gap-sm);
+		flex-wrap: var(--flex-wrap);
+		font-weight: 400;
+		line-height: 1.8;
+		& div:first-child {
+			// flex: 0 calc(100% - var(--gap-sm));
+		}
+		& div:last-child > .address {
+			width: max-content;
+			// flex: 0 20.33%;
+			font-style: normal;
+			text-transform: none;
+			font-family: 'Poppins';
+			font-size: var(--text-sm);
+			line-height: 1.8;
+		}
+		> div * + * {
+			margin-block-start: var(--gap-xs);
+		}
 	}
+}
+#day .section__body {
+	width: 100%;
+	flex-wrap: wrap;
 }
