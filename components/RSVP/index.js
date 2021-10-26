@@ -42,21 +42,7 @@ function Rsvp(props) {
 						<em className='serif'>{'"SOS cant make it"'}</em>,
 						either way, please let us know
 					</h2>
-					<div className='rsvp__buttons'>
-						<Button
-							as='button'
-							icon='coffee'
-							click={props.handleAccept}>
-							RSVP
-						</Button>
-						<button
-							type='button'
-							style={{ cursor: 'pointer' }}
-							className='btn'
-							onClick={props.handleAccept}>
-							RSVP
-						</button>
-					</div>
+					<div className='rsvp__buttons'></div>
 				</div>
 			</div>
 		</div>
