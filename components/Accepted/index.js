@@ -36,30 +36,32 @@ const Accepted = () => {
 		}
 	};
 
-	useEffect(async () => {
+	useEffect(() => {
 		if (guestData.length === 0 || guestData[0].id === 'undefined') {
 			setFound(!found);
 			return;
 		} else if (guestData.length > 0) {
 			router.push(`/guest/${guestData[0].id}`);
 		}
-
-		try {
-			const accept = await fetch('/api/accept', {
-				method: 'PUT',
-				body: JSON.stringify({
-					id: guestData[0].id,
-					fields: {
-						Attending: 'Accepted',
+		async function fetchData() {
+			try {
+				const accept = await fetch('/api/accept', {
+					method: 'PUT',
+					body: JSON.stringify({
+						id: guestData[0].id,
+						fields: {
+							Attending: 'Accepted',
+						},
+					}),
+					headers: {
+						'Content-Type': 'application/json',
 					},
-				}),
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			});
-		} catch (error) {
-			console.error(error);
+				});
+			} catch (error) {
+				console.error(error);
+			}
 		}
+		fetchData();
 	}, [guestData]);
 	return (
 		<div className={styles.content}>
