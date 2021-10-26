@@ -19,7 +19,6 @@ const Menu = ({ control, intolerances }) => {
 	const items = useWatch({
 		control,
 	});
-	console.log(`intolerances`, intolerances);
 
 	return (
 		<div className={styles.menu}>

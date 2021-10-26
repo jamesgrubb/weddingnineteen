@@ -27,9 +27,9 @@ const GlobalNav = () => {
 	const [scrolled, setScrolled] = useState(null);
 	const [scrolling, isScrolling] = useState(false);
 	const [mobileNavOpened, setMobileNavOpened] = useState(false);
-	console.log(colorGreen);
+
 	const handleIsScrolling = () => {};
-	console.log(`mobileNavOpened`, mobileNavOpened);
+
 	const handleScrollEvent = () => {
 		const offset = window.scrollY;
 		if (offset > 200) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../Page/Button';
 function Rsvp(props) {
-	console.log(props.as);
 	return (
 		<div id='rsvp' className='rsvp'>
 			<div className='rsvp__content'>

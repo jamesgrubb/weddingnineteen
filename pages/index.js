@@ -11,8 +11,6 @@ import DayAndNight from '../components/Layouts/dayAndNight';
 import { table, getMinifiedRecords } from '../utils/airtable';
 import Event from '../components/Timeline';
 export default function Home({ events }) {
-	console.log('🚀 ~ file: index.js ~ line 14 ~ Home ~ events', events);
-
 	const [showModal, setShowModal] = useState(false);
 	const [accept, setAccept] = useState(null);
 	const handleAccept = (e) => {

@@ -7,7 +7,6 @@ import styles from '../../../components/Page/Header/Header.module.scss';
 const Guest = (props) => {
 	const { handleSubmit } = useForm();
 
-	console.log(`props.diet`, props.diet);
 	const saveGuestDataHandler = async (enteredGuestData) => {
 		const newGuestData = {
 			id: props.id,
