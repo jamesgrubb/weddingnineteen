@@ -45,7 +45,7 @@ const GlobalNav = () => {
 	useEffect(() => {
 		window.addEventListener('scroll', handleScrollEvent);
 		return () => window.removeEventListener('scroll', handleScrollEvent);
-	}, [handleScrollEvent]);
+	}, []);
 	useEffect(() => {
 		setMobileNavOpened(false);
 	}, [activeRoute]);
