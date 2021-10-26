@@ -65,7 +65,7 @@ const Accepted = () => {
 		if (guestData.length) {
 			fetchData();
 		}
-	}, [guestData, guestData, useRouter]);
+	}, [guestData, found, router]);
 	return (
 		<div className={styles.content}>
 			<div className={styles.content__text}>
