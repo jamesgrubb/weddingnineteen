@@ -37,6 +37,7 @@ const Accepted = () => {
 	};
 
 	useEffect(() => {
+		console.log('used effect');
 		async function fetchData() {
 			try {
 				const accept = await fetch('/api/accept', {
@@ -61,8 +62,10 @@ const Accepted = () => {
 				console.error(error);
 			}
 		}
-		fetchData();
-	}, [guestData]);
+		if (guestData.length) {
+			fetchData();
+		}
+	}, [guestData, guestData, useRouter]);
 	return (
 		<div className={styles.content}>
 			<div className={styles.content__text}>

@@ -65,19 +65,7 @@ const GlobalNav = () => {
 						className={cx(
 							styles.nav__items,
 							mobileNavOpened ? styles.nav__itemsOpen : ''
-						)}
-						// style={
-						// 	mobileNavOpened
-						// 		? {
-						// 				'--position': 'fixed',
-						// 				'--menu-display': 'flex',
-						// 		  }
-						// 		: {
-						// 				'--position': 'static',
-						// 				'--menu-display': 'none',
-						// 		  }
-						// }
-					>
+						)}>
 						{Links.map((link, i) => {
 							return (
 								<li
