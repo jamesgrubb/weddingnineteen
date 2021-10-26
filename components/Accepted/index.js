@@ -37,12 +37,6 @@ const Accepted = () => {
 	};
 
 	useEffect(() => {
-		if (guestData.length === 0 || guestData[0].id === 'undefined') {
-			setFound(!found);
-			return;
-		} else if (guestData.length > 0) {
-			router.push(`/guest/${guestData[0].id}`);
-		}
 		async function fetchData() {
 			try {
 				const accept = await fetch('/api/accept', {
@@ -57,6 +51,12 @@ const Accepted = () => {
 						'Content-Type': 'application/json',
 					},
 				});
+				if (guestData.length === 0 || guestData[0].id === 'undefined') {
+					setFound(!found);
+					return;
+				} else if (guestData.length > 0) {
+					router.push(`/guest/${guestData[0].id}`);
+				}
 			} catch (error) {
 				console.error(error);
 			}
