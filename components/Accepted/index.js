@@ -37,7 +37,6 @@ const Accepted = () => {
 	};
 
 	useEffect(() => {
-		console.log('used effect');
 		async function fetchData() {
 			try {
 				const accept = await fetch('/api/accept', {
