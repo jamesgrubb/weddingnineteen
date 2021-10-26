@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 const Choice = forwardRef((props, ref) => {
 	// const { register, errors } = useForm();
+	Choice.displayName = 'Choice';
 	return (
 		<div className='menu-form__form-group'>
 			<div className='menu-form__form-label serif'>
