@@ -12,11 +12,11 @@ const Links = [
 		name: 'live',
 	},
 	{
-		path: '/the-c-word',
+		path: '/#the-c-word',
 		name: 'the c word',
 	},
 	{
-		path: '/wise-words',
+		path: '/#wise-words',
 		name: 'wise words',
 	},
 ];

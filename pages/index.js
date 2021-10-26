@@ -34,7 +34,7 @@ export default function Home({ events }) {
 				bodyBackground='blue'
 				title='Welcome'
 				subtitle='text'>
-				<p>
+				<p className='display'>
 					Welcome, We&apos;re finally (hopefully!) getting married on
 					Tuesday 28th December 2021 and are looking forward to
 					celebrating with you.
@@ -47,6 +47,23 @@ export default function Home({ events }) {
 				title='Venue'
 				subtitle='text'>
 				<div className='column'>
+					<address className='address'>
+						Tuddenham Mill High Street,
+						<br />
+						Tuddenham Nr Bury St Edmunds,
+						<br /> Suffolk IP28 6SQ
+						<br />
+						<a href='mailto:info@tuddenhammill.co.uk'>
+							info@tuddenhammill.co.uk
+						</a>
+						<br />
+						<a href='tel:+4401638713552'>01638 713552</a>
+						<br />
+						Website{' '}
+						<a href='https://www.tuddenhammill.co.uk'>
+							tuddenhammill.co.uk
+						</a>
+					</address>
 					<p>
 						There are a few rooms available at the venue, if you
 						haven&apos;t contacted us already and if you would like
@@ -66,44 +83,28 @@ export default function Home({ events }) {
 						Newmarket these are about 30mins drive a way.
 					</p>
 				</div>
-				<div className='column'>
-					<address className='address'>
-						Tuddenham Mill High Street,
-						<br />
-						Tuddenham Nr Bury St Edmunds,
-						<br /> Suffolk IP28 6SQ
-						<br />
-						<a href='mailto:info@tuddenhammill.co.uk'>
-							info@tuddenhammill.co.uk
-						</a>
-						<br />
-						<a href='tel:+4401638713552'>01638 713552</a>
-						<br />
-						Website{' '}
-						<a href='https://www.tuddenhammill.co.uk'>
-							tuddenhammill.co.uk
-						</a>
-					</address>
-				</div>
 			</Section>
-			<Section
-				id='Day'
-				headerBackground='orange'
-				bodyBackground='cornflowerblue'
-				title='Day'>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-					Dolores, ab!
-				</p>
-			</Section>
+
 			<Section
 				headerBackground='orange'
 				bodyBackground='cornflowerblue'
 				title='Day'
 				subtitle='text'>
 				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-					Dolores, ab!
+					We hope you enjoy the day as much as we have enjoyed
+					planning it!
+				</p>
+				<Event events={events} />
+			</Section>
+			<Section
+				id='the-c-word'
+				headerBackground='orange'
+				bodyBackground='cornflowerblue'
+				title='The C Word'
+				subtitle='text'>
+				<p>
+					We hope you enjoy the day as much as we have enjoyed
+					planning it!
 				</p>
 				<Event events={events} />
 			</Section>

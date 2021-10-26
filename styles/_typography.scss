@@ -37,6 +37,7 @@ h4,
 
 p {
 	margin: 0;
+	max-width: 50ch;
 }
 .sans {
 	font-family: 'Poppins', sans-serif;
@@ -47,6 +48,10 @@ p {
 
 .script {
 	font-family: 'Reenie Beanie', cursive;
+}
+
+.display {
+	font-size: var(--text-md);
 }
 
 $sizes: (

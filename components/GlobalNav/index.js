@@ -7,6 +7,7 @@ import cx from 'classnames';
 import React from 'react';
 import { colorGreen } from '../../styles/colors.module.scss';
 import { FiX, FiMenu } from 'react-icons/fi';
+
 const LinkComponent = React.forwardRef(
 	(
 		{ as, children, href, replace, scroll, shadow, passHref, ...rest },
@@ -19,6 +20,8 @@ const LinkComponent = React.forwardRef(
 		</Link>
 	)
 );
+
+LinkComponent.displayName = 'LinkComponent';
 
 const GlobalNav = () => {
 	const [scrolled, setScrolled] = useState(null);

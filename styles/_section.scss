@@ -4,7 +4,7 @@
 	--width-content: 95%;
 	--align: center;
 	--align-even: flex-start;
-	--align-odd: flex-end;
+	--align-odd: flex-start;
 	--size-title: var(--text-md);
 	@include break-at(65ch) {
 		--size-title: var(--text-xl);
@@ -13,14 +13,14 @@
 	@include break-at(90ch) {
 		--align-even: flex-start;
 		--align-odd: flex-end;
-		--width-content: 75%;
+		--width-content: 100%;
 	}
 	min-height: 500px;
 	display: flex;
 	width: 100%;
 	flex-direction: column;
 	align-items: center;
-	background-color: var(--color-gray-base);
+	background-color: var(--color-brand-base);
 	&:nth-child(even) {
 		background-color: var(--color-brand-dark);
 		.section__item .section__content {
@@ -33,7 +33,7 @@
 	&__item {
 		max-width: var(--width-max);
 		display: flex;
-		justify-content: center;
+		// justify-content: center;
 		margin: 0 auto;
 		width: 100%;
 		flex-wrap: var(--flex-wrap);
@@ -51,7 +51,7 @@
 		// margin: 0 auto;
 	}
 	&__title {
-		margin-block: var(--gap-xxl);
+		margin-block: var(--gap-md);
 		font-size: var(--size-title);
 		text-transform: uppercase;
 		letter-spacing: 0.3rem;

@@ -5,7 +5,9 @@ const Section = ({ children, ...props }) => {
 	};
 
 	return (
-		<section id={props.title.toLowerCase()} className='section'>
+		<section
+			id={props.title.toLowerCase().replace(/\s+/g, '-')}
+			className='section'>
 			<div style={style} className='section__item'>
 				<div className='section__content'>
 					<header className='section__header'>
