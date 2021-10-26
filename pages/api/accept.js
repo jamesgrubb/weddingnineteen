@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 						(AND({name} = "${name}",{surname} = "${surname}")),
 						(AND({name} = "${toTitleCase(name)}",{surname} = "${toTitleCase(surname)}")),
 						(AND({name} = "${name}",FIND("${surname}",{surname})>0)),
-						(AND({name} = "${name}",FIND(REGEX_REPLACE("${surname}",'[^-]*','' ),{surname})>0))											
+						(AND({name} = "${name}",FIND(REGEX_REPLACE("${surname}",'[^\\-]*','' ),{surname})>0))											
 						)`,
 				})
 				.firstPage();
